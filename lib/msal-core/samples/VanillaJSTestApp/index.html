@@ -19,14 +19,8 @@
         </div>
     </div>
     <script>
-    /*var applicationConfig = {
-            clientID: "245e9392-c666-4d51-8f8a-bfd9e55b2456",
-            authority: "https://login.microsoftonline.com/common",
-            graphScopes: ["user.read", "Mail.Send"],
-            graphEndpoint: "https://graph.microsoft.com/v1.0/me",
-            loginType: 'POPUP'
-    };*/
 
+    // initialize msal configuration
     var msalConfig = {
         auth: {
             clientId: "245e9392-c666-4d51-8f8a-bfd9e55b2456",
@@ -39,27 +33,29 @@
         }
     };
 
+    // login request - to get the authentication (resulting in an idToken. scopes are pre consented, need to follow up with AT calls for accessTokens)
     var loginRequest = {
         scopes: ["openid", "profile", "User.Read"]
     }
 
+    // accessToken request - to get tokens to access a specific resource, new scopes can be added
     var tokenRequest = {
         scopes: ["Mail.Read"]
     };
 
+    // resource end points
     var graphConfig = {
         graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
         graphMailEndpoint: "https://graph.microsoft.com/v1.0/me/messages"
     };
 
-
+    // instantiate MSAL
     var myMSALObj = new Msal.UserAgentApplication(msalConfig);
+    // register call back for redirect calls
     myMSALObj.handleRedirectCallback(authRedirectCallBack);
 
+    // Sign in
     function signIn() {
-        /*let loginRequest = {
-            scopes: graphConfig.loginScopes
-        };*/
         myMSALObj.loginPopup(loginRequest).then(function (loginResponse) {
             //Login Success
             console.log(loginResponse);
@@ -70,13 +66,9 @@
         });
     }
 
+    // acquire Token for MSGraph access
     function acquireTokenPopupAndCallMSGraph(endpoint, request) {
         //Call acquireTokenSilent (iframe) to obtain a token for Microsoft Graph
-        /*
-        let tokenRequest = {
-            scopes: applicationConfig.graphScopes
-        };
-        */
         myMSALObj.acquireTokenSilent(request).then(function (tokenResponse) {
             console.log("acquireTokenSilent scopes: ", tokenResponse.scopes);
             callMSGraph(endpoint, tokenResponse.accessToken, graphAPICallback);
@@ -93,6 +85,7 @@
         });
     }
 
+    // endpoint(this case: Graph) call
     function callMSGraph(theUrl, accessToken, callback) {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function () {
@@ -104,10 +97,12 @@
         xmlHttp.send();
     }
 
+    // Graph call back
     function graphAPICallback(data) {
         document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
     }
 
+    // Util function - welcome message
     function showWelcomeMessage() {
         var divWelcome = document.getElementById('WelcomeMessage');
         divWelcome.innerHTML = 'Welcome ' + myMSALObj.getAccount().userName + " to Microsoft Graph API";
@@ -116,10 +111,12 @@
         loginbutton.setAttribute('onclick', 'signOut();');
     }
 
+    // reads email from Graph end point
     function readMail() {
         acquireTokenPopupAndCallMSGraph(graphConfig.graphMailEndpoint, tokenRequest);
     }
 
+    // logout
     function signOut() {
         myMSALObj.logout();
     }
@@ -127,9 +124,6 @@
    // This function can be removed if you do not need to support IE
    function acquireTokenRedirectAndCallMSGraph(endpoint, request) {
         //Call acquireTokenSilent (iframe) to obtain a token for Microsoft Graph
-        /*let tokenRequest = {
-            scopes: graphConfig.scopes
-        };*/
         myMSALObj.acquireTokenSilent(request).then(function (tokenResponse) {
             callMSGraph(endpoint, tokenResponse.accessToken, graphAPICallback);
         }).catch(function (error) {
@@ -142,6 +136,7 @@
         });
     }
 
+    // handle MSAL call back for token in case of redirect calls
     function authRedirectCallBack(error, response) {
         if (error) {
             console.log(error);
@@ -154,6 +149,7 @@
         }
     }
 
+    // special error cases where developer needs to fall back to interactive acquireToken calls instead of acquireTokenSilent
     function requiresInteraction(errorMessage) {
         if (!errorMessage || !errorMessage.length) {
             return false;
