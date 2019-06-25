@@ -107,6 +107,11 @@ export const SSOTypes = {
     DOMAIN_REQ: "domain_req"
 };
 
+export const BlacklistedEQParams = [
+  SSOTypes.SID,
+  SSOTypes.LOGIN_HINT
+];
+
 /**
  * we considered making this "enum" in the request instead of string, however it looks like the allowed list of
  * prompt values kept changing over past couple of years. There are some undocumented prompt values for some
@@ -121,5 +126,5 @@ export const PromptState = {
 };
 
 export const Library = {
-  version: "1.0.1"
+  version: "1.0.2"
 };
