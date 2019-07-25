@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   login()
   {
-   this.authService.loginPopup(["user.read" ,"api://a88bb933-319c-41b5-9f04-eff36d985612/access_as_user"]);
+   this.authService.loginRedirect();
   }
 
   logout()
