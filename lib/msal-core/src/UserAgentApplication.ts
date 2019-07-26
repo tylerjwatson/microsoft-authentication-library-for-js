@@ -24,7 +24,7 @@ import { ServerError } from "./error/ServerError";
 import { InteractionRequiredAuthError } from "./error/InteractionRequiredAuthError";
 import { AuthResponse, buildResponseStateOnly } from "./AuthResponse";
 import TelemetryManager from "./telemetry/TelemetryManager";
-import { TelemetryPlatform, TelemetryConfig } from './telemetry/TelemetryTypes';
+import { TelemetryPlatform, TelemetryConfig } from "./telemetry/TelemetryTypes";
  // default authority
 const DEFAULT_AUTHORITY = "https://login.microsoftonline.com/common";
 

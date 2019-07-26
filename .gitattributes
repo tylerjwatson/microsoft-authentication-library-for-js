@@ -1,1 +1,2 @@
 * text=auto
+lib/msal-core/src/**/*.ts text eol=lf
