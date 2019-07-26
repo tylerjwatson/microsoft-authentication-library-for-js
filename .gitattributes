@@ -1,2 +1,2 @@
 * text=auto
-lib/msal-core/src/**/*.ts text eol=lf
+lib/msal-core/src/**/*.ts text eol=crlf
