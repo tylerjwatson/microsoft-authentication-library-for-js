@@ -12,29 +12,28 @@ import { ClientConfigurationError } from "./error/ClientConfigurationError";
  */
 export class Storage {// Singleton
 
-  private static instance: Storage;
   private localStorageSupported: boolean;
   private sessionStorageSupported: boolean;
-  private cacheLocation: CacheLocation;
+  private prefix: string;
+  private cacheLocation: string;
 
-  constructor(cacheLocation: CacheLocation) {
-    if (Storage.instance) {
-      return Storage.instance;
+  constructor(cacheLocation: CacheLocation, prefix: string) {
+    if (!prefix) {
+      throw new Error(`Prefix is undefined`);
     }
-
     this.cacheLocation = cacheLocation;
+    this.prefix = prefix;
     this.localStorageSupported = typeof window[this.cacheLocation] !== "undefined" && window[this.cacheLocation] != null;
     this.sessionStorageSupported = typeof window[cacheLocation] !== "undefined" && window[cacheLocation] != null;
-    Storage.instance = this;
     if (!this.localStorageSupported && !this.sessionStorageSupported) {
       throw ClientConfigurationError.createNoStorageSupportedError();
     }
-
-    return Storage.instance;
   }
 
     // add value to storage
     setItem(key: string, value: string, enableCookieStorage?: boolean): void {
+        key = `${this.prefix}${Constants.resourceDelimiter}${key}`;
+
         if (window[this.cacheLocation]) {
             window[this.cacheLocation].setItem(key, value);
         }
@@ -45,6 +44,8 @@ export class Storage {// Singleton
 
     // get one item by key from storage
     getItem(key: string, enableCookieStorage?: boolean): string {
+        key = `${this.prefix}${Constants.resourceDelimiter}${key}`;
+
         if (enableCookieStorage && this.getItemCookie(key)) {
             return this.getItemCookie(key);
         }
@@ -56,6 +57,8 @@ export class Storage {// Singleton
 
     // remove value from storage
     removeItem(key: string): void {
+        key = `${this.prefix}${Constants.resourceDelimiter}${key}`;
+
         if (window[this.cacheLocation]) {
             return window[this.cacheLocation].removeItem(key);
         }
@@ -75,7 +78,8 @@ export class Storage {// Singleton
         if (storage) {
             let key: string;
             for (key in storage) {
-                if (storage.hasOwnProperty(key)) {
+                if (storage.hasOwnProperty(key) && key.startsWith(this.prefix)) {
+                    key = key.replace(this.prefix + Constants.resourceDelimiter, "");
                     if (key.match(clientId) && key.match(homeAccountIdentifier)) {
                         const value = this.getItem(key);
                         if (value) {
@@ -96,7 +100,9 @@ export class Storage {// Singleton
             let key: string;
             for (key in storage) {
                 if (storage.hasOwnProperty(key)) {
-                    if ((key.indexOf(CacheKeys.AUTHORITY) !== -1 || key.indexOf(CacheKeys.ACQUIRE_TOKEN_ACCOUNT) !== 1) && (!state || key.indexOf(state) !== -1)) {
+                    if (key.startsWith(this.prefix) && (key.indexOf(CacheKeys.AUTHORITY) !== -1 || key.indexOf(CacheKeys.ACQUIRE_TOKEN_ACCOUNT) !== 1) && (!state || key.indexOf(state) !== -1)) {
+                        key = key.replace(this.prefix + Constants.resourceDelimiter, "");
+
                         const splitKey = key.split(Constants.resourceDelimiter);
                         let state;
                         if (splitKey.length > 1) {
@@ -128,7 +134,9 @@ export class Storage {// Singleton
         if (storage) {
             let key: string;
             for (key in storage) {
-                if (storage.hasOwnProperty(key)) {
+                if (storage.hasOwnProperty(key) && key.startsWith(this.prefix)) {
+                    key = key.replace(this.prefix + Constants.resourceDelimiter, "");
+
                     if (key.indexOf(Constants.msal) !== -1) {
                         this.removeItem(key);
                     }
@@ -139,6 +147,8 @@ export class Storage {// Singleton
     }
 
     setItemCookie(cName: string, cValue: string, expires?: number): void {
+        cName = `${this.prefix}${Constants.resourceDelimiter}${cName}`;
+
         let cookieStr = cName + "=" + cValue + ";";
         if (expires) {
             const expireTime = this.getCookieExpirationTime(expires);
@@ -149,8 +159,10 @@ export class Storage {// Singleton
     }
 
     getItemCookie(cName: string): string {
+        cName = `${this.prefix}${Constants.resourceDelimiter}${cName}`;
         const name = cName + "=";
         const ca = document.cookie.split(";");
+        // TODO: prefix
         for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
             while (c.charAt(0) === " ") {
@@ -181,7 +193,7 @@ export class Storage {// Singleton
      * @param accountId
      * @param state
      */
-    static generateAcquireTokenAccountKey(accountId: any, state: string): string {
+    generateAcquireTokenAccountKey(accountId: any, state: string): string {
         return CacheKeys.ACQUIRE_TOKEN_ACCOUNT + Constants.resourceDelimiter +
             `${accountId}` + Constants.resourceDelimiter  + `${state}`;
     }
@@ -190,7 +202,7 @@ export class Storage {// Singleton
      * Create authorityKey to cache authority
      * @param state
      */
-    static generateAuthorityKey(state: string): string {
+    generateAuthorityKey(state: string): string {
         return CacheKeys.AUTHORITY + Constants.resourceDelimiter + `${state}`;
     }
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DefaultEvent | msal</title>
+	<title>UiEvent | msal</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_telemetry_defaultevent_.html">&quot;telemetry/DefaultEvent&quot;</a>
+					<a href="../modules/_telemetry_uievent_.html">&quot;telemetry/UiEvent&quot;</a>
 				</li>
 				<li>
-					<a href="_telemetry_defaultevent_.defaultevent.html">DefaultEvent</a>
+					<a href="_telemetry_uievent_.uievent.html">UiEvent</a>
 				</li>
 			</ul>
-			<h1>Class DefaultEvent</h1>
+			<h1>Class UiEvent</h1>
 		</div>
 	</div>
 </header>
@@ -76,7 +76,7 @@
 						<a href="_telemetry_telemetryevent_.telemetryevent.html" class="tsd-signature-type">TelemetryEvent</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">DefaultEvent</span>
+								<span class="target">UiEvent</span>
 							</li>
 						</ul>
 					</li>
@@ -89,27 +89,29 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_telemetry_defaultevent_.defaultevent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_telemetry_uievent_.uievent.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_defaultevent_.defaultevent.html#eventid" class="tsd-kind-icon">event<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_uievent_.uievent.html#eventid" class="tsd-kind-icon">event<wbr>Id</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_defaultevent_.defaultevent.html#eventname" class="tsd-kind-icon">event<wbr>Name</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_defaultevent_.defaultevent.html#telemetrycorrelationid" class="tsd-kind-icon">telemetry<wbr>Correlation<wbr>Id</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_telemetry_uievent_.uievent.html#accessdenied" class="tsd-kind-icon">access<wbr>Denied</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_uievent_.uievent.html#eventname" class="tsd-kind-icon">event<wbr>Name</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_uievent_.uievent.html#telemetrycorrelationid" class="tsd-kind-icon">telemetry<wbr>Correlation<wbr>Id</a></li>
+								<li class="tsd-kind-set-signature tsd-parent-kind-class"><a href="_telemetry_uievent_.uievent.html#usercancelled" class="tsd-kind-icon">user<wbr>Cancelled</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_defaultevent_.defaultevent.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_defaultevent_.defaultevent.html#stop" class="tsd-kind-icon">stop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_uievent_.uievent.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_telemetry_uievent_.uievent.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,32 +123,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Default<wbr>Event<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../interfaces/_telemetry_telemetrytypes_.telemetryplatform.html" class="tsd-signature-type">TelemetryPlatform</a>, correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, eventCount<span class="tsd-signature-symbol">: </span><a href="../interfaces/_telemetry_telemetrytypes_.eventcount.html" class="tsd-signature-type">EventCount</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_telemetry_defaultevent_.defaultevent.html" class="tsd-signature-type">DefaultEvent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>UiEvent<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_telemetry_uievent_.uievent.html" class="tsd-signature-type">UiEvent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_telemetry_telemetryevent_.telemetryevent.html">TelemetryEvent</a>.<a href="_telemetry_telemetryevent_.telemetryevent.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/DefaultEvent.ts#L6">telemetry/DefaultEvent.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/UiEvent.ts#L9">telemetry/UiEvent.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>platform: <a href="../interfaces/_telemetry_telemetrytypes_.telemetryplatform.html" class="tsd-signature-type">TelemetryPlatform</a></h5>
-								</li>
-								<li>
 									<h5>correlationId: <span class="tsd-signature-type">string</span></h5>
 								</li>
-								<li>
-									<h5>clientId: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>eventCount: <a href="../interfaces/_telemetry_telemetrytypes_.eventcount.html" class="tsd-signature-type">EventCount</a></h5>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_telemetry_defaultevent_.defaultevent.html" class="tsd-signature-type">DefaultEvent</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_telemetry_uievent_.uievent.html" class="tsd-signature-type">UiEvent</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -165,8 +158,31 @@
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="accessdenied" class="tsd-anchor"></a>
+					<h3>access<wbr>Denied</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> accessDenied<span class="tsd-signature-symbol">(</span>accessDenied<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/UiEvent.ts#L18">telemetry/UiEvent.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>accessDenied: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="eventname" class="tsd-anchor"></a>
 					<h3>event<wbr>Name</h3>
@@ -213,6 +229,29 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-set-signature tsd-parent-kind-class">
+					<a name="usercancelled" class="tsd-anchor"></a>
+					<h3>user<wbr>Cancelled</h3>
+					<ul class="tsd-signatures tsd-kind-set-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> userCancelled<span class="tsd-signature-symbol">(</span>userCancelled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/UiEvent.ts#L14">telemetry/UiEvent.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>userCancelled: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -267,7 +306,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_telemetry_defaultevent_.html">"telemetry/<wbr>Default<wbr>Event"</a>
+						<a href="../modules/_telemetry_uievent_.html">"telemetry/<wbr>UiEvent"</a>
 					</li>
 				</ul>
 			</nav>
@@ -276,30 +315,39 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_telemetry_defaultevent_.defaultevent.html" class="tsd-kind-icon">Default<wbr>Event</a>
+						<a href="_telemetry_uievent_.uievent.html" class="tsd-kind-icon">Ui<wbr>Event</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_telemetry_defaultevent_.defaultevent.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_telemetry_uievent_.uievent.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_telemetry_defaultevent_.defaultevent.html#eventid" class="tsd-kind-icon">event<wbr>Id</a>
+								<a href="_telemetry_uievent_.uievent.html#eventid" class="tsd-kind-icon">event<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_telemetry_uievent_.uievent.html#accessdenied" class="tsd-kind-icon">access<wbr>Denied</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="_telemetry_defaultevent_.defaultevent.html#eventname" class="tsd-kind-icon">event<wbr>Name</a>
+								<a href="_telemetry_uievent_.uievent.html#eventname" class="tsd-kind-icon">event<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
-								<a href="_telemetry_defaultevent_.defaultevent.html#telemetrycorrelationid" class="tsd-kind-icon">telemetry<wbr>Correlation<wbr>Id</a>
+								<a href="_telemetry_uievent_.uievent.html#telemetrycorrelationid" class="tsd-kind-icon">telemetry<wbr>Correlation<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-set-signature tsd-parent-kind-class">
+								<a href="_telemetry_uievent_.uievent.html#usercancelled" class="tsd-kind-icon">user<wbr>Cancelled</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_telemetry_defaultevent_.defaultevent.html#get" class="tsd-kind-icon">get</a>
+								<a href="_telemetry_uievent_.uievent.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_telemetry_defaultevent_.defaultevent.html#stop" class="tsd-kind-icon">stop</a>
+								<a href="_telemetry_uievent_.uievent.html#stop" class="tsd-kind-icon">stop</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="../modules/_telemetry_uievent_.html#event_keys" class="tsd-kind-icon">EVENT_<wbr>KEYS</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

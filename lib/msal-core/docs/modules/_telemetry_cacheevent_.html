@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;error/ServerError&quot; | msal</title>
+	<title>&quot;telemetry/CacheEvent&quot; | msal</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_error_servererror_.html">&quot;error/ServerError&quot;</a>
+					<a href="_telemetry_cacheevent_.html">&quot;telemetry/CacheEvent&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;error/ServerError&quot;</h1>
+			<h1>External module &quot;telemetry/CacheEvent&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,80 +71,115 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-external-module"><a href="../enums/_telemetry_cacheevent_.token_types.html" class="tsd-kind-icon">TOKEN_<wbr>TYPES</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_error_servererror_.servererror.html" class="tsd-kind-icon">Server<wbr>Error</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_telemetry_cacheevent_.cacheevent.html" class="tsd-kind-icon">Cache<wbr>Event</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_telemetry_cacheevent_.html#token_type_key" class="tsd-kind-icon">TOKEN_<wbr>TYPE_<wbr>KEY</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_error_servererror_.html#servererrormessage" class="tsd-kind-icon">Server<wbr>Error<wbr>Message</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_telemetry_cacheevent_.html#cache_event_types" class="tsd-kind-icon">CACHE_<wbr>EVENT_<wbr>TYPES</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Object literals</h2>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
-					<a name="servererrormessage" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> Server<wbr>Error<wbr>Message</h3>
-					<div class="tsd-signature tsd-kind-icon">Server<wbr>Error<wbr>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="token_type_key" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> TOKEN_<wbr>TYPE_<wbr>KEY</h3>
+					<div class="tsd-signature tsd-kind-icon">TOKEN_<wbr>TYPE_<wbr>KEY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_type&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L6">error/ServerError.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L21">telemetry/CacheEvent.ts:21</a></li>
 						</ul>
 					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="servererrormessage.serverunavailable" class="tsd-anchor"></a>
-						<h3>server<wbr>Unavailable</h3>
-						<div class="tsd-signature tsd-kind-icon">server<wbr>Unavailable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
+					<a name="cache_event_types" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> CACHE_<wbr>EVENT_<wbr>TYPES</h3>
+					<div class="tsd-signature tsd-kind-icon">CACHE_<wbr>EVENT_<wbr>TYPES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L5">telemetry/CacheEvent.ts:5</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencacheafteraccess" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>After<wbr>Access</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>After<wbr>Access<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_after_access&quot;)</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L7">error/ServerError.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L9">telemetry/CacheEvent.ts:9</a></li>
 							</ul>
 						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="servererrormessage.serverunavailable.code" class="tsd-anchor"></a>
-							<h3>code</h3>
-							<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;server_unavailable&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L8">error/ServerError.ts:8</a></li>
-								</ul>
-							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="servererrormessage.serverunavailable.desc" class="tsd-anchor"></a>
-							<h3>desc</h3>
-							<div class="tsd-signature tsd-kind-icon">desc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Server is temporarily unavailable.&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L9">error/ServerError.ts:9</a></li>
-								</ul>
-							</aside>
-						</section>
 					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
-						<a name="servererrormessage.unknownservererror" class="tsd-anchor"></a>
-						<h3>unknown<wbr>Server<wbr>Error</h3>
-						<div class="tsd-signature tsd-kind-icon">unknown<wbr>Server<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencachebeforeaccess" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>Before<wbr>Access</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>Before<wbr>Access<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_before_access&quot;)</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L11">error/ServerError.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L8">telemetry/CacheEvent.ts:8</a></li>
 							</ul>
 						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-							<a name="servererrormessage.unknownservererror.code-1" class="tsd-anchor"></a>
-							<h3>code</h3>
-							<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;unknown_server_error&quot;</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/error/ServerError.ts#L12">error/ServerError.ts:12</a></li>
-								</ul>
-							</aside>
-						</section>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencachebeforewrite" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>Before<wbr>Write</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>Before<wbr>Write<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_before_write&quot;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L10">telemetry/CacheEvent.ts:10</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencachedelete" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>Delete</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>Delete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_delete&quot;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L11">telemetry/CacheEvent.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencachelookup" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>Lookup</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>Lookup<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_lookup&quot;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L6">telemetry/CacheEvent.ts:6</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="cache_event_types.tokencachewrite" class="tsd-anchor"></a>
+						<h3>Token<wbr>Cache<wbr>Write</h3>
+						<div class="tsd-signature tsd-kind-icon">Token<wbr>Cache<wbr>Write<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;prependEventNamePrefix(&quot;token_cache_write&quot;)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core/src/telemetry/CacheEvent.ts#L7">telemetry/CacheEvent.ts:7</a></li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 			</section>
@@ -156,17 +191,23 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_error_servererror_.html">"error/<wbr>Server<wbr>Error"</a>
+						<a href="_telemetry_cacheevent_.html">"telemetry/<wbr>Cache<wbr>Event"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="../enums/_telemetry_cacheevent_.token_types.html" class="tsd-kind-icon">TOKEN_<wbr>TYPES</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_error_servererror_.servererror.html" class="tsd-kind-icon">Server<wbr>Error</a>
+						<a href="../classes/_telemetry_cacheevent_.cacheevent.html" class="tsd-kind-icon">Cache<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_telemetry_cacheevent_.html#token_type_key" class="tsd-kind-icon">TOKEN_<wbr>TYPE_<wbr>KEY</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="_error_servererror_.html#servererrormessage" class="tsd-kind-icon">Server<wbr>Error<wbr>Message</a>
+						<a href="_telemetry_cacheevent_.html#cache_event_types" class="tsd-kind-icon">CACHE_<wbr>EVENT_<wbr>TYPES</a>
 					</li>
 				</ul>
 			</nav>
